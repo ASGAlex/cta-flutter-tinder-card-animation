@@ -27,6 +27,7 @@ class SwipeableCardsSection extends StatefulWidget {
   final double cardHeightMiddleMul;
   final double cardHeightBottomMul;
   final Function? appendItemCallback;
+  final bool enableSwipe;
   final bool enableSwipeUp;
   final bool enableSwipeDown;
 
@@ -43,6 +44,7 @@ class SwipeableCardsSection extends StatefulWidget {
     this.cardHeightMiddleMul = 0.55,
     this.cardHeightBottomMul = 0.5,
     this.appendItemCallback,
+    this.enableSwipe = true,
     this.enableSwipeUp = true,
     this.enableSwipeDown = true,
   }) {
@@ -109,6 +111,8 @@ class _CardsSectionState extends State<SwipeableCardsSection>
   @override
   void initState() {
     super.initState();
+
+    enableSwipe = widget.enableSwipe;
 
     final cardController = widget.cardController;
     if (cardController != null) {
